@@ -30,3 +30,27 @@ Standard connections are:
   
 The only examples currently implemented are hello (which does nothing) and thethingsnetwork-send-v1 which sends test strings to the TTN network (if a gateway is in reach).
 Do not forget to put your own device number in thethingsnetwork-send-v1.cpp!!
+
+# Prepare compiling
+
+- sudo apt install libjsoncpp-dev 
+- mkdir ~/Downloads -p && git clone https://github.com/WiringPi/WiringPi.git ~/Downloads/WiringPi && cd ~/Downloads/WiringPi && ./build
+
+# Compile
+
+- make
+
+# /boot/d0logger/lorawan.cong
+
+{ 
+        "deviceEui": "",
+        "applicationEui": "",
+        "deviceAddress": "",
+        "networkSessionKey": "",
+        "appSessionKey": "",
+        "obisSelection": "1.8.0" 
+}
+
+# /boot/d0logging/lastreadingpath.conf
+
+/tmp/lastd0readout
