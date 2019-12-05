@@ -92,7 +92,7 @@ static osjob_t sendjob;
 const unsigned TX_INTERVAL = 120;
 
 //Flag for Ctrl-C
-volatile sig_atomic_t force_exit = 1;
+volatile sig_atomic_t force_exit = 0;
 
 // LoRasPi board
 // see https://github.com/hallard/LoRasPI
@@ -291,6 +291,8 @@ void onEvent(ev_t ev)
     char strTime[16];
     getSystemTime(strTime, sizeof(strTime));
     printf("%s: ", strTime);
+
+    force_exit = 1;
 
     switch (ev)
     {
