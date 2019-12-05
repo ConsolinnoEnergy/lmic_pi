@@ -92,7 +92,7 @@ static osjob_t sendjob;
 const unsigned TX_INTERVAL = 120;
 
 //Flag for Ctrl-C
-volatile sig_atomic_t force_exit = 0;
+volatile sig_atomic_t force_exit = 1;
 
 // LoRasPi board
 // see https://github.com/hallard/LoRasPI
